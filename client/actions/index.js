@@ -9,6 +9,20 @@ export const showError = (errorMessage) => {
   }
 }
 
+// export function fetchPosts (subreddit) {
+//   return (dispatch) => {
+//     dispatch(requestPosts())
+//     return request
+//       .get(`/api/v1/reddit/subreddit/${subreddit}`)
+//       .then(res => {
+//         dispatch(receivePosts(res.body))
+//       })
+//       .catch(err => {
+//         dispatch(showError(err.message))
+//       })
+//   }
+// }
+
 ////////// FOR REFERENCE ONLY /////////////////////////////
 
 // export const RECEIVE_POSTS = 'RECEIVE_POSTS'

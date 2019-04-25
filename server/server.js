@@ -8,4 +8,6 @@ server.use(express.static(path.join(__dirname, '../public')))
 
 server.use('/api/v1/reddit', redditRoutes) //////////CREATE NEW FOR YOUR API
 
+server.use('/api/v1/countriesnanz', countriesNanz)
+
 module.exports = server
