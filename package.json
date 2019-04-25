@@ -22,29 +22,29 @@
     ]
   },
   "dependencies": {
-    "express": "^4.16.4"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.2.2",
-    "@babel/plugin-proposal-class-properties": "^7.3.0",
-    "@babel/plugin-proposal-object-rest-spread": "^7.3.2",
-    "@babel/preset-env": "^7.3.1",
-    "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.5",
-    "enzyme": "^3.7.0",
-    "enzyme-adapter-react-16": "^1.7.0",
-    "jest": "^24.1.0",
-    "nock": "^10.0.2",
-    "nodemon": "^1.18.6",
+    "express": "^4.16.4",
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.2.3",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-redux": "^6.0.0",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
     "superagent": "^5.0.2",
-    "supertest": "^4.0.2",
-    "webpack": "^4.29.3",
-    "webpack-cli": "^3.2.3"
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.3.2",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5"
+  },
+  "devDependencies": {
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.7.0",
+    "jest": "^24.1.0",
+    "nock": "^10.0.2",
+    "nodemon": "^1.18.6",
+    "supertest": "^4.0.2"
   },
   "jest": {
     "setupFiles": [
