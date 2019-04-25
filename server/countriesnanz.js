@@ -5,16 +5,22 @@ const router = express.Router()
 
 router.use(express.json())
 
-router.get('/nanz/countries', (req, res) => {
+router.get('/country/:countrycode', (req, res) => {
+    let countrycode = req.params.countrycode
   request
-    .get(`http://api.worldbank.org/v2/country/?format=json`)
+    .get(`http://api.worldbank.org/v2/country/${countrycode}/?format=json`)
     .end((err, result) => {
+      console.log (result.body[1])
       if (err) {
         res.status(500).send(err.message)
       } else {
-        res.json(result.body)
+        res.json(result.body[1])
       }
     })
+  
 })
 
 module.exports = router
+
+
+

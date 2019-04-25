@@ -9,24 +9,9 @@ export const showError = (errorMessage) => {
   }
 }
 
-// export function fetchPosts (subreddit) {
-//   return (dispatch) => {
-//     dispatch(requestPosts())
-//     return request
-//       .get(`/api/v1/reddit/subreddit/${subreddit}`)
-//       .then(res => {
-//         dispatch(receivePosts(res.body))
-//       })
-//       .catch(err => {
-//         dispatch(showError(err.message))
-//       })
-//   }
-// }
 
-////////// FOR REFERENCE ONLY /////////////////////////////
-
-// export const RECEIVE_POSTS = 'RECEIVE_POSTS'
-// export const REQUEST_POSTS = 'REQUEST_POSTS'
+export const RECEIVE_COUNTRY = 'RECEIVE_COUNTRY'
+// export const REQUEST_POSTS = 'REQUEST_COUNTRY'
 
 // export const requestPosts = () => {
 //   return {
@@ -34,22 +19,22 @@ export const showError = (errorMessage) => {
 //   }
 // }
 
-// export const receivePosts = (posts) => {
+// export const receiveCountryinfo = (country) => {
 //   return {
-//     type: RECEIVE_POSTS,
-//     posts: posts.map(post => post.data)
+//     type: RECEIVE_COUNTRY,
+//     name: country.map(info => )
 //   }
 // }
 
 
 
-// export function fetchPosts (subreddit) {
+// export function fetchPosts (countrycode) {
 //   return (dispatch) => {
-//     dispatch(requestPosts())
+
 //     return request
-//       .get(`/api/v1/reddit/subreddit/${subreddit}`)
+//       .get(`/api/v1/countries/country/${countrycode}`)
 //       .then(res => {
-//         dispatch(receivePosts(res.body))
+//         dispatch(receiveCountryinfo(res.body))
 //       })
 //       .catch(err => {
 //         dispatch(showError(err.message))
