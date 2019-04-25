@@ -1,3 +1,6 @@
+
+////////////// NOT TRAVELPAC //////////////////
+
 import {
   SHOW_ERROR,
   REQUEST_POSTS,
