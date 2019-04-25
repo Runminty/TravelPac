@@ -1,6 +1,6 @@
 import request from 'superagent'
 export const SHOW_ERROR = 'SHOW_ERROR'
-export const REQUEST_FLAG = 'REQUEST FLAG'
+export const REQUEST_COUNTRY = 'REQUEST_COUNTRY'
 
 
 export const showError = (errorMessage) => {
@@ -10,9 +10,29 @@ export const showError = (errorMessage) => {
   }
 }
 
-export const requestFlag = () => {
+export const requestCountry = (country) => {
   return {
-    type: REQUEST_FLAG
+    type: REQUEST_COUNTRY,
+    country: country
+  }
+}
+
+export const receiveCountry = (country) => {
+  console.log("This is the country you chose: ", country)
+}
+
+export function fetchCountry (country) {
+  return (dispatch) => {
+    dispatch(requestCountry(country))
+    return request
+      .get(`https://restcountries.eu/rest/v2/name/Ireland?fullText=true`)
+      .then(res => {
+        console.log(res.body)
+        dispatch(receiveCountry(res.body)
+      })
+      .catch(err => {
+        dispatch(showError(err.message))
+      })
   }
 }
 

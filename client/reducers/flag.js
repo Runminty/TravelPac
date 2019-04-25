@@ -1,13 +1,14 @@
-import {REQUEST_FLAG} from '../actions'
+import {REQUEST_COUNTRY} from '../actions'
 
-function flag (state = '', action) {
+function country (state = null, action) {
   switch (action.type) {
-    case REQUEST_FLAG:
-      return action.flagURL
+    case REQUEST_COUNTRY:
+        console.log("Updating country to ", action.country)
+      return action.country
 
     default:
       return state
   }
 }
 
-export default flag
+export default country
