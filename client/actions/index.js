@@ -1,11 +1,18 @@
 import request from 'superagent'
 export const SHOW_ERROR = 'SHOW_ERROR'
+export const REQUEST_FLAG = 'REQUEST FLAG'
 
 
 export const showError = (errorMessage) => {
   return {
     type: SHOW_ERROR,
     errorMessage: errorMessage
+  }
+}
+
+export const requestFlag = () => {
+  return {
+    type: REQUEST_FLAG
   }
 }
 
