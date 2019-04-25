@@ -1,7 +1,7 @@
 import React from 'react'
 import ErrorMessage from './ErrorMessage'
-import FetchFlag from './FetchFlag'
 import Flag from './Flag'
+import Input from './Input'
 ////////// FOR REFERENCE ONLY /////////////////////////////
 
 // import LoadSubreddit from './LoadSubreddit'
@@ -12,7 +12,7 @@ const App = () => (
   <div className='app'>
 
     <h1>Welcome to TravelPac</h1>
-    <FetchFlag />
+    <Input />
     <Flag />
     <ErrorMessage />
 

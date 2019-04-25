@@ -1,6 +1,7 @@
 import request from 'superagent'
 export const SHOW_ERROR = 'SHOW_ERROR'
 export const REQUEST_COUNTRY = 'REQUEST_COUNTRY'
+export const SET_COUNTRY = 'SET_COUNTRY'
 
 
 export const showError = (errorMessage) => {
@@ -21,14 +22,21 @@ export const receiveCountry = (country) => {
   console.log("This is the country you chose: ", country)
 }
 
+export const setCountry = (country) => {
+  console.log("setting country")
+  return {
+    type: SET_COUNTRY,
+    country: country
+  }
+}
+
 export function fetchCountry (country) {
   return (dispatch) => {
-    dispatch(requestCountry(country))
+    dispatch(setCountry(country))
     return request
-      .get(`https://restcountries.eu/rest/v2/name/Ireland?fullText=true`)
+      .get(`https://restcountries.eu/rest/v2/name/${country}?fullText=true`)
       .then(res => {
-        console.log(res.body)
-        dispatch(receiveCountry(res.body)
+        dispatch(receiveCountry(res.body))
       })
       .catch(err => {
         dispatch(showError(err.message))
