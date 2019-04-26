@@ -23,7 +23,7 @@ class Input extends React.Component{
 
     render () {
         return (
-            <div class = "searching-bar">
+            <div className = "searching-bar">
             
             <div id="question">
                  <h2>Where do you want to go?</h2>
