@@ -6,7 +6,6 @@ export const REQUEST_COUNTRY = 'REQUEST_COUNTRY'
 export const SET_COUNTRY = 'SET_COUNTRY'
 export const SET_COUNTRY_CODE = 'SET_COUNTRY_CODE'
 export const SET_FLAG_URL = 'SET_FLAG_URL'
-export const SET_LANGUAGES = 'SET_LANGUAGES'
 
 
 export const showError = (errorMessage) => {
@@ -17,20 +16,13 @@ export const showError = (errorMessage) => {
 }
 
 export const receiveCountry = (country) => {
+  console.log("This is the country you chose: ", country)
   // fire some functions here!!!
   let countryCode = country[0]["alpha2Code"]
 
   return {
     type: SET_COUNTRY_CODE,
     countryCode: countryCode
-  }
-}
-
-export const setCountry = (country) => {
-
-  return {
-    type: SET_COUNTRY,
-    country: country
   }
 }
 
@@ -46,6 +38,7 @@ export const setCountryCode = (country) => {
 
 export const setFlagURL = (country) => {
 
+  console.log(country[0]["flag"])
   let flagURL = country[0]["flag"]
 
   return {
@@ -54,14 +47,12 @@ export const setFlagURL = (country) => {
   } 
 }
 
-export const setLanguages = (country) => {
-
-  let languages = country[0]["languages"]
-
+export const setCountry = (country) => {
+  console.log("setting country", country)
   return {
-    type: SET_LANGUAGES,
-    languages: languages
-  } 
+    type: SET_COUNTRY,
+    country: country
+  }
 }
 
 export function fetchCountry (country) {                   
@@ -72,13 +63,12 @@ export function fetchCountry (country) {
       .then(res => {
         dispatch(setCountryCode(res.body))
         dispatch(setFlagURL(res.body))
-        dispatch(setLanguages(res.body))
-
         dispatch(receiveCountry(res.body))
         let countryCode = res.body[0]["alpha2Code"]
         return (countryCode)
       })
       .then(countryCode => {
+        console.log("countrycode after then", countryCode) 
         return request
         .get(`/api/v1/countries/news/${countryCode}`)     //news API
       })
