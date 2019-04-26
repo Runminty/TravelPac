@@ -8,10 +8,10 @@ const News = ({news}) => {
     <div>
         {news.map(article => 
 
-        <div>
-        <img src={article.image} /><br></br>
+        <div className="countryNewsBox">
+        <img src={article.image} width="300"/><br></br>
        
-        <a href={article.link}> <h1>{article.title} </h1></a>
+        <a href={article.link}> <h3>{article.title} </h3></a>
         <p>{article.source} ({article.date})</p> 
         <p>{article.description}</p>
         <br></br>

@@ -30,6 +30,11 @@ h2 {
   text-align: center;
 }
 
+h3{
+  font-size: 30px;
+  text-decoration: none;
+}
+
 .form{
   margin:180px 450px 20px 450px;
   border:black;
@@ -123,12 +128,17 @@ footer {
   display: table;
   clear: both;
 }
+
 .countryNewsBox {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
   padding: 16px;
   text-align: center;
   background-color: #f1f1f1;
+  /* width: 300px; */
 }
+
+
+
 /* Style the counter cards */
 .otherBox {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
