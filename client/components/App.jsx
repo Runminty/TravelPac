@@ -1,5 +1,6 @@
 import React from 'react'
 import ErrorMessage from './ErrorMessage'
+import Input from './Input'
 ////////// FOR REFERENCE ONLY /////////////////////////////
 
 // import LoadSubreddit from './LoadSubreddit'
@@ -9,8 +10,7 @@ import ErrorMessage from './ErrorMessage'
 const App = () => (
   <div className='app'>
 
-    <h1>Welcome to TravelPac</h1>
-
+    <Input />
     <ErrorMessage />
 
     {/* <LoadSubreddit>
