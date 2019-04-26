@@ -3,7 +3,6 @@ import {connect} from 'react-redux'
 
 const Flag = (props) => {
     if (props.country) {
-      console.log("Rendering flag", props.flagURL)
       return (
         <div>
           {props.country}
