@@ -7,8 +7,7 @@
     "dev": "nodemon --watch server & webpack --watch",
     "test": "jest --watchAll",
     "start": "node server",
-    "postinstall": "webpack",
-    "build": "webpack --watch"
+    "postinstall": "webpack"
   },
   "author": "EDA",
   "license": "ISC",
