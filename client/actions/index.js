@@ -1,5 +1,10 @@
 import request from 'superagent'
 export const SHOW_ERROR = 'SHOW_ERROR'
+// export const RECEIVE_COUNTRYINFO = 'RECEIVE_COUNTRYINFO'            //nanz old country api
+export const RECEIVE_NEWS = 'RECEIVE_NEWS'
+export const REQUEST_COUNTRY = 'REQUEST_COUNTRY'
+export const SET_COUNTRY = 'SET_COUNTRY'
+export const SET_COUNTRY_CODE = 'SET_COUNTRY_CODE'
 
 
 export const showError = (errorMessage) => {
@@ -9,33 +14,110 @@ export const showError = (errorMessage) => {
   }
 }
 
-////////// FOR REFERENCE ONLY /////////////////////////////
+export const requestCountry = (country) => {
+  return {
+    type: REQUEST_COUNTRY,
+    country: country
+  }
+}
 
-// export const RECEIVE_POSTS = 'RECEIVE_POSTS'
-// export const REQUEST_POSTS = 'REQUEST_POSTS'
+export const receiveCountry = (country) => {
+  console.log("This is the country you chose: ", country)
+  // fire some functions here!!!
+  let countryCode = country[0]["alpha2Code"]
 
-// export const requestPosts = () => {
-//   return {
-//     type: REQUEST_POSTS
-//   }
-// }
+  return {
+    type: SET_COUNTRY_CODE,
+    countryCode: countryCode
+  }
+  
+}
 
-// export const receivePosts = (posts) => {
-//   return {
-//     type: RECEIVE_POSTS,
-//     posts: posts.map(post => post.data)
-//   }
-// }
+export const setCountry = (country) => {
+  console.log("setting country", country)
+  return {
+    type: SET_COUNTRY,
+    country: country
+  }
+}
+
+export function fetchCountry (country) {                   
+  return (dispatch) => {
+    dispatch(setCountry(country))
+    return request
+      .get(`https://restcountries.eu/rest/v2/name/${country}?fullText=true`)  //countries API
+      .then(res => {
+        dispatch(receiveCountry(res.body))
+        let countryCode = res.body[0]["alpha2Code"]
+        return (countryCode)
+      })
+      .then(countryCode => {
+        console.log("countrycode after then", countryCode) 
+        return request
+        .get(`/api/v1/countries/news/${countryCode}`)     //news API
+      })
+      .then(res => {
+        dispatch(receiveNews(res.body))
+      })  
+      
+      .catch(err => {
+        dispatch(showError(err.message))
+      })
+  }
+}
 
 
+export const receiveNews = (articlesArr) => {
+  console.log("The news is:", articlesArr)
+  return {
+    type: RECEIVE_NEWS,
+    article: articlesArr.map(article => {
+      source = article.source.name,
+      title = article.title,
+      image = article.URLtoImage,
+      date = article.date,
+      description = article.description
+     })
+  }
+}
 
-// export function fetchPosts (subreddit) {
+// OLD FETCH NEWS
+// export function fetchNews (country) {
 //   return (dispatch) => {
-//     dispatch(requestPosts())
+//     dispatch(receiveCountry(country))
+//     let countryCode = country[0]["alpha2Code"]
+
+//     console.log('Fetching news of', country, 'whose code is', countryCode)
+
 //     return request
-//       .get(`/api/v1/reddit/subreddit/${subreddit}`)
+//       .get(`/api/v1/countries/news/${countryCode}`)
 //       .then(res => {
-//         dispatch(receivePosts(res.body))
+//         dispatch(receiveNews(res.body))
+//       })
+//       .catch(err => {
+//         dispatch(showError(err.message))
+//       })
+//   }
+// }
+
+/// NANZ's OLD COUNTRY API ///
+// export const receiveCountryinfo = (countryObj) => {
+//   return {
+//     type: RECEIVE_COUNTRYINFO,
+//     name: countryObj.name,
+//     region: countryObj.region.value,
+//     capitalCity: countryObj.capitalCity
+
+//   }
+// }
+
+// export function fetchCountry (countrycode) {
+//   return (dispatch) => {
+
+//     return request
+//       .get(`/api/v1/countries/country/${countrycode}`)
+//       .then(res => {
+//         dispatch(receiveCountryinfo(res.body))
 //       })
 //       .catch(err => {
 //         dispatch(showError(err.message))

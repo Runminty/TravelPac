@@ -1,7 +1,3 @@
-
-////////////// NOT TRAVELPAC - REMAKE THIS PAGE //////////////////
-
-
 const express = require('express')
 const request = require('superagent')
 
@@ -9,10 +5,12 @@ const router = express.Router()
 
 router.use(express.json())
 
+
+//what goes in the first arguement here? Why?
 router.get('/subreddit/:subreddit', (req, res) => {
-  
+
   request
-    .get(`http://www.reddit.com/r/${req.params.subreddit}.json`)
+    .get('https://restcountries.eu/rest/v2/name/Ireland?fullText=true')
     .end((err, result) => {
       if (err) {
         res.status(500).send(err.message)
