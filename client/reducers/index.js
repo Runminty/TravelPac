@@ -4,6 +4,7 @@ import errorMessage from './error-message'
 import flag from './flag'
 import country from './country'
 import countryCode from './countryCode'
+import news from './news'
 
 
 ////////// FOR REFERENCE ONLY /////////////////////////////
@@ -14,7 +15,8 @@ export default combineReducers({
   errorMessage,
   flag,
   country,
-  countryCode
+  countryCode,
+  news
   // subreddits,
   // waiting
 })
