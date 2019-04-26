@@ -4,6 +4,7 @@ import errorMessage from './error-message'
 import flagURL from './flagURL'
 import country from './country'
 import countryCode from './countryCode'
+import news from './news'
 import languages from './languages'
 
 
@@ -16,5 +17,6 @@ export default combineReducers({
   flagURL,
   country,
   countryCode,
+  news,
   languages
 })
