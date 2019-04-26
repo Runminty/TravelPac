@@ -6,9 +6,9 @@ const News = ({news}) => {
     
     return (
     <div>
-        {news.map(article => 
+        {news.map((article,key) => 
 
-        <div className="countryNewsBox">
+        <div className="countryNewsBox" width="300" key={key} >
         <img src={article.image} width="300"/><br></br>
        
         <a href={article.link}> <h3>{article.title} </h3></a>
