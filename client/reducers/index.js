@@ -1,6 +1,8 @@
 import {combineReducers} from 'redux'
 
 import errorMessage from './error-message'
+import flag from './flag'
+import country from './country'
 
 
 ////////// FOR REFERENCE ONLY /////////////////////////////
@@ -9,6 +11,8 @@ import errorMessage from './error-message'
 
 export default combineReducers({
   errorMessage,
+  flag,
+  country
   // subreddits,
   // waiting
 })
