@@ -3,6 +3,7 @@ export const SHOW_ERROR = 'SHOW_ERROR'
 export const REQUEST_COUNTRY = 'REQUEST_COUNTRY'
 export const SET_COUNTRY = 'SET_COUNTRY'
 export const SET_COUNTRY_CODE = 'SET_COUNTRY_CODE'
+export const SET_FLAG_URL = 'SET_FLAG_URL'
 
 
 export const showError = (errorMessage) => {
@@ -12,25 +13,25 @@ export const showError = (errorMessage) => {
   }
 }
 
-export const requestCountry = (country) => {
-  return {
-    type: REQUEST_COUNTRY,
-    country: country
-  }
-}
-
-export const receiveCountry = (country) => {
-  console.log("This is the country you chose: ", country)
-  // fire some functions here!!!
-  console.log("Country code: ", country[0]["alpha2Code"])
+export const setCountryCode = (country) => {
 
   let countryCode = country[0]["alpha2Code"]
 
   return {
     type: SET_COUNTRY_CODE,
     countryCode: countryCode
-  }
-  
+  } 
+}
+
+export const setFlagURL = (country) => {
+
+  console.log(country[0]["flag"])
+  let flagURL = country[0]["flag"]
+
+  return {
+    type: SET_FLAG_URL,
+    flagURL: flagURL
+  } 
 }
 
 export const setCountry = (country) => {
@@ -47,7 +48,8 @@ export function fetchCountry (country) {
     return request
       .get(`https://restcountries.eu/rest/v2/name/${country}?fullText=true`)
       .then(res => {
-        dispatch(receiveCountry(res.body))
+        dispatch(setCountryCode(res.body))
+        dispatch(setFlagURL(res.body))
       })
       .catch(err => {
         dispatch(showError(err.message))

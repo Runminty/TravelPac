@@ -1,6 +1,7 @@
 import React from 'react'
 import ErrorMessage from './ErrorMessage'
 import Input from './Input'
+import Flag from './Flag'
 ////////// FOR REFERENCE ONLY /////////////////////////////
 
 // import LoadSubreddit from './LoadSubreddit'
@@ -10,15 +11,10 @@ import Input from './Input'
 const App = () => (
   <div className='app'>
 
-    <h1>Welcome to TravelPac</h1>
-    <Input />
     <ErrorMessage />
+    <Input />
+    <Flag />
 
-    {/* <LoadSubreddit>
-      <WaitIndicator />
-    </LoadSubreddit>
-    <SubredditList />
- */}
 
   </div>
 )
