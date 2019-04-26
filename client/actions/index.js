@@ -96,13 +96,14 @@ export const receiveNews = (articlesArr) => {
   console.log("The news is:", articlesArr)
   return {
     type: RECEIVE_NEWS,
-    article: articlesArr.map(article => {
-      source = article.source.name,
-      title = article.title,
-      image = article.URLtoImage,
-      date = article.date,
-      description = article.description
-     })
+    news: articlesArr.map(article => ({
+      source: article.source.name,
+      title: article.title,
+      image: article.urlToImage,
+      date: article.publishedAt,
+      description: article.description,
+      link: article.url
+     }))
   }
 }
 
