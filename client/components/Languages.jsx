@@ -4,18 +4,10 @@ import {connect} from 'react-redux'
 const Languages = (props) => {
 
     if (props.country) {
-
-
-        console.log(props.languages)
-
-        // languageArr.map(language => {
-        //     console.log(language.name)
-        // })
-
         return (
-            <div>
-            Languages will go here!
-            </div>
+            props.languages.map(language => {
+                return <p>{language.name}</p>
+            })
         )
     } else return <div></div>
 }
