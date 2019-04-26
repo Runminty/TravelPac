@@ -14,11 +14,6 @@ const App = () => (
     <Input />
     <ErrorMessage />
 
-    {/* <LoadSubreddit>
-      <WaitIndicator />
-    </LoadSubreddit>
-    <SubredditList />
- */}
 
   </div>
 )
