@@ -2,6 +2,7 @@ import request from 'superagent'
 export const SHOW_ERROR = 'SHOW_ERROR'
 export const REQUEST_COUNTRY = 'REQUEST_COUNTRY'
 export const SET_COUNTRY = 'SET_COUNTRY'
+export const SET_COUNTRY_CODE = 'SET_COUNTRY_CODE'
 
 
 export const showError = (errorMessage) => {
@@ -20,6 +21,16 @@ export const requestCountry = (country) => {
 
 export const receiveCountry = (country) => {
   console.log("This is the country you chose: ", country)
+  // fire some functions here!!!
+  console.log("Country code: ", country[0]["alpha2Code"])
+
+  let countryCode = country[0]["alpha2Code"]
+
+  return {
+    type: SET_COUNTRY_CODE,
+    countryCode: countryCode
+  }
+  
 }
 
 export const setCountry = (country) => {
