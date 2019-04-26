@@ -2,7 +2,6 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 const Flag = (props) => {
-  console.log(props)
     if (props.country) {
       console.log("Rendering flag", props.flagURL)
       return (
@@ -11,7 +10,7 @@ const Flag = (props) => {
           <img src={props.flagURL}/>
         </div>
       )
-    } else return <div>No Flag div yet</div>
+    } else return <div></div>
 }
 
 function mapStateToProps (state) {

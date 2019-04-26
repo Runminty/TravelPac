@@ -11,10 +11,9 @@ import Flag from './Flag'
 const App = () => (
   <div className='app'>
 
-    <ErrorMessage />
     <Input />
+    <ErrorMessage />
     <Flag />
-
 
   </div>
 )

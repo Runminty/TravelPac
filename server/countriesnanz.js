@@ -1,7 +1,3 @@
-
-////////////// NOT TRAVELPAC - REMAKE THIS PAGE //////////////////
-
-
 const express = require('express')
 const request = require('superagent')
 
@@ -9,17 +5,22 @@ const router = express.Router()
 
 router.use(express.json())
 
-router.get('/subreddit/:subreddit', (req, res) => {
-  
+router.get('/country/:countrycode', (req, res) => {
+    let countrycode = req.params.countrycode
   request
-    .get(`http://www.reddit.com/r/${req.params.subreddit}.json`)
+    .get(`http://api.worldbank.org/v2/country/${countrycode}/?format=json`)
     .end((err, result) => {
+      // console.log (result.body[1][0])
       if (err) {
         res.status(500).send(err.message)
       } else {
-        res.json(result.body.data.children)
+        res.json(result.body[1][0])
       }
     })
+  
 })
 
 module.exports = router
+
+
+
