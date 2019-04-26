@@ -10,7 +10,6 @@ import Input from './Input'
 const App = () => (
   <div className='app'>
 
-    <h1>Welcome to TravelPac</h1>
     <Input />
     <ErrorMessage />
 
