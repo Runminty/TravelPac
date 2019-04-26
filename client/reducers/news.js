@@ -1,14 +1,14 @@
-import {REQUEST_COUNTRY} from '../actions'
+import {RECEIVE_NEWS} from '../actions'
 
-function country (state = null, action) {
+function news (state = [], action) {
+  console.log(action)
   switch (action.type) {
-    case REQUEST_COUNTRY:
-        console.log("Updating country to ", action.country)
-      return action.country
+    case RECEIVE_NEWS:
+      return action.news
 
     default:
       return state
   }
 }
 
-export default country
+export default news

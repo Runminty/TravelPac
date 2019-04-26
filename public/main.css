@@ -30,6 +30,11 @@ h2 {
   text-align: center;
 }
 
+h3{
+  font-size: 30px;
+  text-decoration: none;
+}
+
 .form{
   margin:180px 450px 20px 450px;
   border:black;
