@@ -94,7 +94,7 @@ button:hover {
 
 
 footer {
-  margin:0px 0px 0px 500px;
+  margin:0px 0px 0px 600px;
   font-size:20px;
   font:bold;
 }
@@ -107,35 +107,31 @@ footer {
 /* Float four columns side by side */
 .column {
   float: left;
-  width: 25%;
-  padding: 0 10px;
+  width: 30%;
+  padding: 0 15px;
 }
+
 
 /* Remove extra left and right margins, due to padding in columns */
 .otherBox {
   margin: 80px 250px 80px 250px;
-  /* padding:300px 450px 300px 450px; */
+  
 }
-
+.otherBox {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
 /* Clear floats after the columns */
 .otherBox:after {
   content: "";
   display: table;
   clear: both;
 }
-.countryNewsBox {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
-  padding: 16px;
-  text-align: center;
-  background-color: #f1f1f1;
-}
-/* Style the counter cards */
-.otherBox {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
-  padding: 16px;
-  text-align: center;
-  background-color: #f1f1f1;
-}
+
+
+
 .currency {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
   padding: 16px;
@@ -158,6 +154,70 @@ footer {
   background-color: #f1f1f1;
 }
 
+.column1 {
+  float: left;
+  width: 30%;
+  padding: 0 15px;
+}
+
+.countryNewsBox {
+  margin: 80px 250px 80px 250px;
+ 
+}
+.countryNewsBox {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+.countryNewsBox:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.headline1 {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+ 
+}
+
+.headline2 {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+
+
+.headline3 {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+
+.flagBox {
+  margin: 80px 250px 80px 250px;
+  
+}
+.flagBox {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+.flag {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+ 
+}
 
 /* Responsive columns - one column layout (vertical) on small screens */
 @media screen and (max-width: 600px) {
@@ -167,4 +227,24 @@ footer {
     display: block;
     margin-bottom: 20px;
   }
+}
+@media screen and (max-width: 600px) {
+  .column2 {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .column1 {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+p {
+  font-size:20px;
+  font:bold;
 }
